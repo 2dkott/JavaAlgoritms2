@@ -14,6 +14,7 @@ public class RedBlackTree {
 
         leftChild.setRight(node);
         node.setParent(leftChild);
+
         replaceParentsChild(parent, node, leftChild);
     }
 
@@ -21,7 +22,7 @@ public class RedBlackTree {
         TreeNode parent = node.getParent();
         TreeNode rightChild = node.getRight();
 
-        node.setRight(rightChild.getRight());
+        node.setRight(rightChild.getLeft());
         if (rightChild.getLeft() != null) {
             rightChild.getLeft().setParent(node);
         }
